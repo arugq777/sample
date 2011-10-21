@@ -11,6 +11,7 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'sprockets'
 gem 'jquery-rails'
+gem 'devise'
 #gem 'gravatar_image_tag'
 #gem 'will_paginate'
 #gem 'faker'
@@ -26,7 +27,18 @@ end
 group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
-  #gem 'uglifier'
+  gem 'uglifier'
+end
+
+group :test do
+	gem 'factory_girl_rails'
+  gem 'rspec'
+  gem 'webrat'
+  gem 'turn', :require => false
+  gem 'spork'
+  gem 'autotest', '4.4.4'
+  gem 'redgreen', '1.2.2'
+  gem 'test-unit', '2.1.1'
 end
 
 # Use unicorn as the web server
