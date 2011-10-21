@@ -1,10 +1,14 @@
 Library::Application.routes.draw do
 
   devise_for :users
-
-	root :to => "pages#home"
-
-  get "pages/home"
+	resources  :users
+	match "/home", 	:to => "pages#home"
+	root 						:to => "pages#home"
+	
+#  match "/signin",	:to => "/users/sign_in"
+#  match "/signout", :to => "/users/sign_out"
+#  match "/signup",  :to => "/users/sign_up"
+  
 	
   # The priority is based upon order of creation:
   # first created -> highest priority.
