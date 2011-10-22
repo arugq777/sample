@@ -1,0 +1,9 @@
+<h2 class="book_title">Information for <em><%= @book.title %></em></h2>
+<div class = "book_info">
+	<div id="title">	Title: <%= @book.title %>	</div>
+	<div id="author">	Author: <%= @book.author%></div>
+	<div id="summary"></div>
+	<% if current_user %>
+		Add to favorites: 
+	<% end %>
+</div>

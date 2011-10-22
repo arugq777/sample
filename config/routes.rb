@@ -3,7 +3,7 @@ Library::Application.routes.draw do
   devise_for :users do
  	  get "/signin" => "devise/sessions#new"
  	  get "/signup" => "devise/registrations#new"
- 	  delete "/signout" => "devise/sessions#destroy"#, :method => :delete
+ 	  get "/signout" => "devise/sessions#destroy", :method => :delete
   end
 
 	resources  :books
