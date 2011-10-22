@@ -1,0 +1,8 @@
+<h2>Books</h2>
+<div class="book_list">
+	<ul class = "books">
+		<% @books.each do |book| %>
+  	<li><%= link_to book.title, book %>, by <%= book.author %></li>
+  	<%end%>
+	</ul>
+</div>

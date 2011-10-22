@@ -11,7 +11,7 @@
 <div id="user_nav">
   <% if user_signed_in? %>
     Signed in as <%= current_user.email %>. Not you?
-    <%= link_to "Sign Out", "/signout", :method => :delete %>
+    <%= link_to "Sign Out", "/signout" %>
   <% else %>
     <%= link_to "Sign Up", "/signup" %> or <%= link_to "Sign In", "/signin" %>
   <% end %>

@@ -6,7 +6,8 @@ Library::Application.routes.draw do
  	  delete "/signout" => "devise/sessions#destroy"#, :method => :delete
   end
 
-	resources  :users
+	resources  :books
+	match "/books", :to => "books#index"
 	match "/home", 	:to => "pages#home"
 	root 						:to => "pages#home"
 	
