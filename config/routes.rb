@@ -7,7 +7,6 @@ Library::Application.routes.draw do
   end
 
 	resources  :books
-	match "/books", :to => "books#index"
 	match "/home", 	:to => "pages#home"
 	root 						:to => "pages#home"
 	

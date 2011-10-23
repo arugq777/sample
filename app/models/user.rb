@@ -5,5 +5,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :name, :username, :email, :password, :password_confirmation, :remember_me
+  
+  has_many	:favorite_books,	:dependent 		=>	:destroy,
+  														:foreign_key	=>	"fan_id"
+  													
+  has_many 	:favorites, 			:through =>	:favorite_books,
+  														:source => :favorites
 end
