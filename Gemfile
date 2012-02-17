@@ -17,7 +17,9 @@ gem 'devise'
 #gem 'faker'
 
 group :development do
-  gem 'rspec-rails'  
+  gem 'rspec-rails'
+  gem 'ruby-debug19'
+  gem 'ruby-debug-base19'  
 end
 
 # Gems used only for assets and not required
@@ -31,7 +33,7 @@ end
 group :test do
 	gem 'factory_girl_rails'
   gem 'rspec'
-  #gem 'faker'
+  gem 'faker'
   gem 'webrat'
   gem 'turn', :require => false
   gem 'spork'

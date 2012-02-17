@@ -1,0 +1,2 @@
+$("#favorite_form").html("<%= escape_javascript( render( 'books/del_favorite' ))%>")
+$("#favorites").html('<%= "#{ @user.favorites.count } favorites" %>')

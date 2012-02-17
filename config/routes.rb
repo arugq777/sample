@@ -5,8 +5,21 @@ Library::Application.routes.draw do
  	  get "/signup" => "devise/registrations#new"
  	  get "/signout" => "devise/sessions#destroy", :method => :delete
   end
+  
+  resources :users do
+  	member do
+  		get :favorites
+  	end
+  end
 
-	resources  :books
+	resources :books do
+		member do
+			get :fans
+		end
+	end
+	
+	resources :favorited_books, :only => [ :create, :destroy ]
+	
 	match "/home", 	:to => "pages#home"
 	root 						:to => "pages#home"
 	

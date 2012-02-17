@@ -1,4 +1,4 @@
-class FavoriteBook < ActiveRecord::Base
+class FavoritedBook < ActiveRecord::Base
 	attr_accessible :fan_id, :favorited_id
 	
 	belongs_to 	:fan, 			:class_name 	=> "User"
@@ -6,4 +6,5 @@ class FavoriteBook < ActiveRecord::Base
 	
 	validates :fan_id, 				:presence 	=> true
 	validates :favorited_id,	:presence 	=> true
+
 end

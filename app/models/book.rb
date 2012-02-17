@@ -1,11 +1,14 @@
 class Book < ActiveRecord::Base
-	attr_accessible :title, :author
+	attr_accessible :title, :author, :summary
 	
-	has_many	:fans_favoriting,
+	has_many	:favorited_books,
 													:foreign_key => "favorited_id",
-													:class_name => "FavoriteBooks",
 													:dependent => :destroy
 													
-	has_many 	:fans, 				:through	=>	:fans_favoriting,
-  												:source		=>	:fans
+	has_many 	:fans, 				:through	=>	:favorited_books,
+  												:source		=>	:fan
+  												
+  def fan?(fan)
+  	favorited_books.find_by_fan_id(fan)
+  end
 end

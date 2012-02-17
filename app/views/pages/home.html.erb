@@ -1,7 +1,7 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 <% if current_user %>
-	Logged in as <%= current_user.email %>:
+	Logged in as <%= link_to current_user.username, user_path(current_user) %>:
 	<%= link_to 'Sign Out', "/signout"  %>
 <% else %>
 	<%= link_to 'Sign In', "/signin" %> or

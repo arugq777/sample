@@ -1,9 +1,26 @@
-<h2 class="book_title">Information for <em><%= @book.title %></em></h2>
-<div class = "book_info">
-	<div id="title">	Title: <%= @book.title %>	</div>
-	<div id="author">	Author: <%= @book.author%></div>
-	<div id="summary"></div>
-	<% if current_user %>
-		Add to favorites: 
-	<% end %>
+<div id="book_profile" float:center">
+	<div class="sidebar" style="float:right">
+		<%= render 'layouts/favorite_form' if user_signed_in? %><br />
+		<%= @book.fans.count %> fans
+		<ul>
+			<% @book.fans.each do |fan| %>
+				<li>
+					<%= link_to fan.username, user_path(fan) %>
+				</li>
+			<%end%>
+		</ul>
+	</div>
+
+	<div class = "book_info">
+		<div id="title">
+			<h1><%= @book.title %></h1>
+		</div>
+		<div id="author">	
+			Author: <%= @book.author%>
+		</div>
+		<div id="summary">
+			<h3>Summary:</h3>
+			<%= @book.summary %>
+		</div>
+	</div>
 </div>

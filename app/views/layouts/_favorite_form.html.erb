@@ -1,0 +1,9 @@
+
+	<div id="favorite_form">
+		<% if @book.fan?(current_user) %>
+			<%= render 'layouts/del_favorite' %>
+		<% else %>
+			<%= render 'layouts/add_favorite' %>
+		<% end %>
+	</div>
+

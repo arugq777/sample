@@ -1,0 +1,30 @@
+<div id="user_profile">
+
+	<div class="sidebar" style="float:right; height:100%">
+		<strong>Name			</strong> 
+			<%= @user.name %><br>
+		<strong>URL				</strong> 
+			<%= link_to user_path(@user), @user %><br>
+		<strong>Favorites	</strong> 
+			<%= @user.favorites.count %><br>
+	</div>	
+
+	<div id="user_favorites">
+		<h1>
+			<%= @user.username %>
+		</h1>
+		<ul>
+			<% @user.favorites.each do |book| %>
+			<li>
+				<% @book = book %>
+				<%= render 'layouts/favorite_form' if user_signed_in?%>
+				<div>
+					<%= link_to book.title, book_path(book)%>,
+					by <%= book.author %>
+				</div>
+
+			</li>
+			<%end%>
+		</ul>
+	</div>
+</div>

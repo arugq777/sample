@@ -11,6 +11,7 @@ describe PagesController do
 
 		it "should be successful" do
 			get :home
+			debugger
 			response.should be_success
 		end
     
