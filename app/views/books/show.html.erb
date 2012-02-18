@@ -1,7 +1,8 @@
 <div id="book_profile" float:center">
 	<div class="sidebar" style="float:right">
+		
 		<%= render 'layouts/favorite_form' if user_signed_in? %><br />
-		<%= @book.fans.count %> fans
+		<%= render 'layouts/book_stat' -%> fans
 		<ul>
 			<% @book.fans.each do |fan| %>
 				<li>

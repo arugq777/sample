@@ -10,7 +10,9 @@
 
 <div id="user_nav">
   <% if user_signed_in? %>
-    Signed in as <%= current_user.email %>. Not you?
+    Signed in as <%= link_to current_user.name, user_path(current_user) %> 
+    (<%= link_to current_user.username, user_path(current_user)%>). 
+    You have <%= render 'layouts/user_stat' %> favorites. Not you?
     <%= link_to "Sign Out", "/signout" %>
   <% else %>
     <%= link_to "Sign In", "/signin" %> or <%= link_to "Sign Up", "/signup" %>

@@ -1,0 +1,3 @@
+$("#favorite_form_"+"<%= @book.id.to_s %>").html("<%= escape_javascript( render( 'layouts/add_favorite' ))%>")
+$("span.user_stat").html("<%= escape_javascript( render 'layouts/user_stat' ) %>")
+$("span.book_stat"+"<%= @book.id.to_s %>").html("<%= escape_javascript( render 'layouts/book_stat' ) %>")

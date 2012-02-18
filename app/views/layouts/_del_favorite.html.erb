@@ -1,4 +1,4 @@
-<%= form_for current_user.favorited_books.find_by_favorited_id(@book),
+<%= form_for current_user.favorited_books.find_by_favorited_id(@book.id),
 		:html => { :method => :delete },
 		:remote => true do |f| %>
 	<div class="actions"><%= f.submit "Delete Favorite" %></div>

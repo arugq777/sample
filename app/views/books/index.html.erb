@@ -1,8 +1,16 @@
 <h2>Books</h2>
 <div class="book_list">
-	<ul class = "books">
-		<% @books.each do |book| %>
-  	<li><%= link_to book.title, book %>, by <%= book.author %></li>
+	<table class = "books">
+		<% Book.all.each do |book| %>
+		<% @book = book %>
+		<tr>
+  		<td><%= link_to book.title, book %></td>
+  		<td rowspan="2">
+  			<%= render 'layouts/favorite_form' if user_signed_in?%><br>
+  			(<%= render 'layouts/book_stat'%> fans)
+  		</td>
+  	</tr>
+  		<td>By <%= book.author %></td>
   	<%end%>
-	</ul>
+	</table>
 </div>
