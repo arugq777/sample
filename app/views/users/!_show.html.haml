@@ -1,0 +1,36 @@
+#user_profile
+	.sidebar
+		%strong Name 
+		= @user.name
+		%br
+		%strong URL
+		= link_to user_path(@user), @user 
+		%br
+		%strong Favorites
+		= (@user.id == current_user.id) ? (render 'layouts/user_stat') : (@user.favorites.count)
+		%br	
+
+	#user_favorites
+		%h2
+			<% if (@user.id == current_user.id) %>
+				You have <%=render 'layouts/user_stat' %> favorites. <%= link_to "Find more!", "/books" %>
+			<%else%>
+				<%= @user.username + " has " + @user.favorites.count.to_s %> favorites.
+			<%end%>
+		</h2>
+		<table>
+			<% @user.favorites.each do |book| %>
+			<% @book = book %>
+			<tr>
+				<td>
+					<%= link_to book.title, book_path(book)%>
+				</td>
+				<td rowspan="2"><%= render 'layouts/favorite_form' if user_signed_in? -%>
+				<br>(<%= render 'layouts/book_stat' -%> fans )</td>
+			</tr>
+			<tr>
+				<td>By <%= book.author %></td>
+			</tr>
+			<%end%>
+		</table>
+	</div>

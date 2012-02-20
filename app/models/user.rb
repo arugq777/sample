@@ -12,7 +12,13 @@ class User < ActiveRecord::Base
   													
   has_many 	:favorites, 			:through =>	:favorited_books,
   														:source => :favorited
-  														
+  
+	validates :name,      :length       => { :maximum => 50 }
+
+	validates :username,  :presence     => true,
+												:uniqueness		=> { :case_sensitive => false },	 
+                        :length       => { :maximum => 25 }
+												
   def favorite?(book)
   	favorited_books.find_by_favorited_id(book)
   end

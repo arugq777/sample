@@ -1,27 +1,27 @@
-<div id="book_profile" float:center">
-	<div class="sidebar" style="float:right">
-		
-		<%= render 'layouts/favorite_form' if user_signed_in? %><br />
-		<%= render 'layouts/book_stat' -%> fans
-		<ul>
-			<% @book.fans.each do |fan| %>
-				<li>
-					<%= link_to fan.username, user_path(fan) %>
-				</li>
-			<%end%>
+<div class = "book_profile">
+	<div class="sidebar">
+		<div class="stats">
+			<%= render 'layouts/favorite_form' if user_signed_in? %>
+			[&nbsp;<%= render 'layouts/book_stat' -%>fans&nbsp;]
+		</div>
+		<ul id="book_fans">
+			<%= render 'books/book_fans'%>
 		</ul>
 	</div>
-
-	<div class = "book_info">
-		<div id="title">
-			<h1><%= @book.title %></h1>
-		</div>
-		<div id="author">	
-			Author: <%= @book.author%>
-		</div>
-		<div id="summary">
-			<h3>Summary:</h3>
-			<%= @book.summary %>
-		</div>
+	<div id="book_info">
+	<div id="title">
+		<h2><%= @book.title %></h2>
 	</div>
+
+	<div id="author">	
+		by <%= @book.author%>
+	</div>
+
+	<div id="summary">
+		<h3> ~ Summary ~</h3>
+		<p><%= @book.summary %></p>
+	</div>
+	</div>	
+
 </div>
+

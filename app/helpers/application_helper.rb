@@ -1,6 +1,12 @@
 module ApplicationHelper
   def title
-    base_title = "Library"
+
+  	if user_signed_in?
+			base_title = "Pseudobibliophilia"
+		else
+			base_title = "Psuedobibliotheque"
+		end
+
     if @title.nil?
       base_title
     else

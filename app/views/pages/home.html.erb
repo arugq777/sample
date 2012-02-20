@@ -1,9 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<% if current_user %>
-	Logged in as <%= link_to current_user.username, user_path(current_user) %>:
-	<%= link_to 'Sign Out', "/signout"  %>
-<% else %>
-	<%= link_to 'Sign In', "/signin" %> or
-	<%= link_to 'Sign Up', "/signup" %>
-<%end%>
+<h1>Welcome!</h1>
+<p>
+	Browse titles, see what other people are reading, 
+	and build your very own list of favorites! Sound exciting? 
+</p>
+	
+<p>
+	...Honestly, it's really not--this is just a sample app, 
+	after all. But <%= link_to 'Sign In', "/signin" %> or
+	<%= link_to 'Sign Up', "/signup" %> today, anyway!
+</p>

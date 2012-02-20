@@ -1,0 +1,5 @@
+<% @book.fans.each do |fan| %>
+	<li>
+		<%= link_to fan.username, user_path(fan) %>
+	</li>
+<%end%>

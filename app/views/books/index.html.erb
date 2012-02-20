@@ -1,16 +1,19 @@
-<h2>Books</h2>
+<h2>~ The Catalogue ~</h2>
 <div class="book_list">
 	<table class = "books">
+		<% bool = true %>
 		<% Book.all.each do |book| %>
-		<% @book = book %>
-		<tr>
-  		<td><%= link_to book.title, book %></td>
-  		<td rowspan="2">
-  			<%= render 'layouts/favorite_form' if user_signed_in?%><br>
-  			(<%= render 'layouts/book_stat'%> fans)
+		<tr class="color_<%= bool %>">
+  		<td class="title"><%= link_to book.title, book %></td>
+  		<td class="stats" rowspan="2">
+  			<%= render 'layouts/favorite_form', :book => book  if user_signed_in?%>
+  			[&nbsp;<%= render 'layouts/book_stat', :book => book -%>&nbsp;fans&nbsp;]
   		</td>
   	</tr>
-  		<td>By <%= book.author %></td>
+  	<tr class="color_<%= bool %>">
+  		<td class="author">By <%= book.author %></td>
+  	</tr>
+  	<% bool= !bool%>
   	<%end%>
 	</table>
 </div>

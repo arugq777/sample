@@ -1,3 +1,4 @@
-$("#favorite_form_"+"<%= @book.id.to_s %>").html("<%= escape_javascript( render( 'layouts/add_favorite' ))%>")
+$("#favorite_form_"+"<%= @book.id.to_s %>").html( "<%= escape_javascript( render( 'layouts/add_favorite', :book => @book ))%>")
 $("span.user_stat").html("<%= escape_javascript( render 'layouts/user_stat' ) %>")
-$("span.book_stat"+"<%= @book.id.to_s %>").html("<%= escape_javascript( render 'layouts/book_stat' ) %>")
+$("span.book_stat"+"<%= @book.id.to_s %>").html("<%= escape_javascript( render 'layouts/book_stat', :book => @book ) %>")
+$("#book_fans").html("<%= escape_javascript( render 'books/book_fans', :book => @book ) %>")

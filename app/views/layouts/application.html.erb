@@ -1,30 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= title %></title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+  	<title><%= title %></title>
+  	<%= stylesheet_link_tag    "application" %>
+  	<%= javascript_include_tag "application" %>
+  	<%= csrf_meta_tags %>
+	</head>
 
-<div id="user_nav">
-  <% if user_signed_in? %>
-    Signed in as <%= link_to current_user.name, user_path(current_user) %> 
-    (<%= link_to current_user.username, user_path(current_user)%>). 
-    You have <%= render 'layouts/user_stat' %> favorites. Not you?
-    <%= link_to "Sign Out", "/signout" %>
-  <% else %>
-    <%= link_to "Sign In", "/signin" %> or <%= link_to "Sign Up", "/signup" %>
-  <% end %>
-</div>
+	<body>
+		<%= render 'layouts/header'%>
+		<div id="main">
+			<% flash.each do |key, value| %>
+				<div id="messages">
+					<div class = "flash <%= key %>" > <%= value %></div>
+				</div>
+			<% end %>
+			<%= yield %>
+		</div>
 
-<div id="notifications">
-	<p class="notice"><% notice %></p>
-	<p class="alert" ><% alert  %></p>
-</div>
-
-<%= yield %>
-
-</body>
+		<% if user_signed_in? %>
+			<%= render 'layouts/footer'%>
+		<% end %>
+	</body>
 </html>

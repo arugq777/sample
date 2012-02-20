@@ -12,6 +12,8 @@ gem 'therubyracer'
 gem 'sprockets'
 gem 'jquery-rails'
 gem 'devise'
+gem 'haml-rails'
+gem 'sass-rails'
 #gem 'gravatar_image_tag'
 #gem 'will_paginate'
 #gem 'faker'
@@ -25,7 +27,6 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
 end

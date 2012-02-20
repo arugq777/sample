@@ -1,0 +1,341 @@
+@font-face {
+    font-family: 'TeXGyreScholaRegular';
+    src: url('./texgyreschola-regular-webfont.eot');
+    src: local('TeXGyreScholaRegular'),
+				 url('./texgyreschola-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./texgyreschola-regular-webfont.woff') format('woff'),
+         url('./texgyreschola-regular-webfont.ttf') format('truetype'),
+         url('./texgyreschola-regular-webfont.svg#TeXGyreScholaRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'TeXGyreScholaItalic';
+    src: url('./texgyreschola-italic-webfont.eot');
+    src: url('./texgyreschola-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./texgyreschola-italic-webfont.woff') format('woff'),
+         url('./texgyreschola-italic-webfont.ttf') format('truetype'),
+         url('./texgyreschola-italic-webfont.svg#TeXGyreScholaItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'TeXGyreScholaBold';
+    src: url('./texgyreschola-bold-webfont.eot');
+    src: url('./texgyreschola-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./texgyreschola-bold-webfont.woff') format('woff'),
+         url('./texgyreschola-bold-webfont.ttf') format('truetype'),
+         url('./texgyreschola-bold-webfont.svg#TeXGyreScholaBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'TeXGyreScholaBoldItalic';
+    src: url('./texgyreschola-bolditalic-webfont.eot');
+    src: local('TexGyreScholaBoldItalic'),
+    		 url('./texgyreschola-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./texgyreschola-bolditalic-webfont.woff') format('woff'),
+         url('./texgyreschola-bolditalic-webfont.ttf') format('truetype'),
+         url('./texgyreschola-bolditalic-webfont.svg#TeXGyreScholaBoldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'EBGaramondRegular';
+    src: url('./EBGaramond-webfont.eot');
+    src: local("EB Garamond Regular"),
+    		 url('./EBGaramond-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./EBGaramond-webfont.woff') format('woff'),
+         url('./EBGaramond-webfont.ttf') format('truetype'),
+         url('./EBGaramond-webfont.svg#EBGaramondRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'EBGaramondSC';
+    src: url('./EBGaramondSC-webfont.eot');
+    src: local("EB Garamond SC"),
+    		 url('./EBGaramondSC-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./EBGaramondSC-webfont.woff') format('woff'),
+         url('./EBGaramondSC-webfont.ttf') format('truetype'),
+         url('./EBGaramondSC-webfont.svg#EBGaramondSC') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+	margin:0;
+	min-height:100%;
+	background: url('./bkg.png') fixed repeat;
+}
+
+table {
+	border-collapse: collapse;
+	/*border: #888888 5px solid;*/
+	-webkit-box-shadow: inset 0 0 2px 1px #333, 3px 3px 2px #333;
+	-moz-box-shadow: inset 0 0 2px 1px #555, 3px 3px 2px #333;
+	box-shadow: inset 0 0 2px 1px #333, 3px 3px 2px #333;
+}
+
+table.users{ border:none; }
+
+table.users td.user{ font: 14pt 'EBGaramondSC', serif; }
+
+table.users td.user, table.users td.stats{ padding:0 10px 0 10px; }
+
+h1, h2, h3, h4, tr, td { 
+	padding:0;
+	margin:0;
+}
+
+tr.color_true td { background-color: #DDD; }
+
+tr.color_false td {
+	color:#000000;
+	background-color:#FFF;
+}
+
+td.title{
+	padding: 5px 5px 0px 10px;
+	font: 16pt 'EBGaramondRegular', serif;
+/*	border-left:#000000 2px solid; */
+}
+
+td.author{
+	font: 11pt 'TeXGyreScholaRegular', serif;
+	padding-left:5%;
+	padding-bottom: 5px;
+/*	border-left:#000000 2px solid;
+	border-bottom:#000000 2px solid; */
+}
+
+td.stats{ 
+	padding-right: 5px; 
+	padding-top:5px; 
+}
+
+
+.actions {
+	border:double 3px #999;
+	background: #333;
+    
+}
+.actions input{
+	border:none;
+	background:#333;
+	color:white;
+	font: 11pt 'EBGaramondSC', serif;
+}
+
+.actions:hover{
+  border:double 3px #aaa;
+	background:#EEE;
+}
+
+.actions input:hover{
+	color:#000;;
+	background:#EEE;
+}
+
+h1{	font: 36pt 'EBGaramondSC', serif; }
+
+h2{	font: 24pt 'EBGaramondSC', serif; }
+
+h3{	font: 16pt 'EBGaramondRegular', serif; }
+
+a{ 
+	text-decoration:none; 
+	color: #101066;
+}
+
+a:hover{ font-style: italic; }
+
+/* sidebar styles */
+
+.book_stat, td.stats, #user_nav {
+	font: 12pt 'EBGaramondRegular', serif;
+	text-align: center;
+}
+
+.sidebar{
+	float:right;
+	padding-left:16px;
+	font: 12pt 'EBGaramondRegular', serif;
+	
+}
+
+.sidebar ul{
+	margin:0;
+	padding:10px;
+	list-style-type:none;
+	text-align: left;
+	border:#ccc double 5px;
+	border-top:none;
+	background:#fff;
+}
+
+.sidebar .stats{
+	padding:5px 5px 0px 5px;
+	border:#ccc double 5px;
+	border-bottom:none;
+	background:#fff;
+	text-align:center;
+}
+
+/* end sidebar styles */
+
+#main{
+	padding: 20px;
+	margin:10%;
+	margin-top:10px;
+	font-family: 'TeXGyreScholaRegular', serif;
+	letter-spacing: 0;
+	max-width:80%;
+	min-height:570px;
+	height:auto !important;
+	height:570px;
+	background:#fff;
+	position: relative;
+	text-align:justify;
+	color: #0f0f0f;
+	-webkit-box-shadow: inset 0 0 2px 1px #333, 3px 3px 2px #333;
+	-moz-box-shadow: inset 0 0 2px 1px #555, 3px 3px 2px #333;
+	box-shadow: inset 0 0 2px 1px #333, 3px 3px 2px #333;
+}
+
+#header{
+	margin: 5% 10% 10px 10%;
+	padding:0;
+	max-width:80%;
+	background:#fff;
+	float:none;
+	color: #0f0f0f;
+	-webkit-box-shadow: inset 0 0 2px 1px #333, 3px 3px 2px #333;
+	-moz-box-shadow: inset 0 0 2px 1px #333, 3px 3px 2px #333;
+	box-shadow: inset 0 0 2px 1px #333, 3px 3px 2px #333;
+}
+
+#app_title h1 a{
+	margin:0;
+	padding:0;
+	font: 48pt 'EBGaramondSC', serif;
+	text-shadow: 1px 1px 4px #888;
+	color: #000;
+}
+
+#app_title h1{
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+
+
+#nav_links{
+	text-align:center;
+	margin:0;
+	padding:3px 3px 3px 3px;
+	font: 10pt 'EBGaramondSC', serif;
+}
+
+#nav_links a {
+	color: #292929;
+	text-decoration:none;
+	margin-right:5px;
+	padding-right:5px;
+	padding-left:5px;
+	border-right:1px #000 solid;
+	border-left:1px #000 solid;
+}
+
+
+#book_info #author{ padding-left:5%; }
+
+#book_info #summary{ text-align:justify; }
+
+#book_info h3{ text-align:center; }
+
+#footer-wrap {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;	
+}
+
+#footer-container {
+	height: 36px;
+
+}
+
+#footer {
+	font: 12pt 'EBGaramondSC', serif;
+	padding: 4px;
+	text-align: center;
+	width: 80%;
+	margin: 0 auto;
+	position: relative;
+	background: #000;
+	color:#fff;
+	border: 5px double #aaa;
+}
+
+#footer a{
+	color: #5577FF;
+}
+
+.field_with_errors {
+  margin-top: 10px;
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+.field_with_errors label {
+  color: #fff;
+}
+
+#error_explanation {
+  width: 400px;
+  border: 2px dotted red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+#messages{
+	font: 18pt "EBGaramondSC", serif;
+	text-align: center;
+	color:#4444FF;
+	background:#DDD;
+}
