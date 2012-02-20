@@ -20,6 +20,7 @@ Library::Application.routes.draw do
 	
 	resources :favorited_books, :only => [ :create, :destroy ]
 	
+	match "/about", :to => "pages#about"
 	match "/home", 	:to => "pages#home"
 	root 						:to => "pages#home"
 	

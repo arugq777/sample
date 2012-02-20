@@ -1,8 +1,8 @@
 <div class = "book_profile">
 	<div class="sidebar">
 		<div class="stats">
-			<%= render 'layouts/favorite_form' if user_signed_in? %>
-			[&nbsp;<%= render 'layouts/book_stat' -%>fans&nbsp;]
+			<%= render 'layouts/favorite_form', :book =>@book if user_signed_in? %>
+			[&nbsp;<%= render 'layouts/book_stat', :book => @book -%>fans&nbsp;]
 		</div>
 		<ul id="book_fans">
 			<%= render 'books/book_fans'%>

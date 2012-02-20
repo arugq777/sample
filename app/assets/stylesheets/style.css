@@ -91,7 +91,10 @@ table.users{ border:none; }
 
 table.users td.user{ font: 14pt 'EBGaramondSC', serif; }
 
-table.users td.user, table.users td.stats{ padding:0 10px 0 10px; }
+table.users td.user, table.users td.stats{
+	padding:0 10px 0 10px; 
+	text-align:center;
+}
 
 h1, h2, h3, h4, tr, td { 
 	padding:0;
@@ -121,7 +124,8 @@ td.author{
 
 td.stats{ 
 	padding-right: 5px; 
-	padding-top:5px; 
+	padding-top:5px;
+	width: 15%;
 }
 
 
@@ -158,7 +162,7 @@ a{
 	color: #101066;
 }
 
-a:hover{ font-style: italic; }
+a:hover{ font-weight:bold; }
 
 /* sidebar styles */
 
@@ -176,7 +180,7 @@ a:hover{ font-style: italic; }
 
 .sidebar ul{
 	margin:0;
-	padding:10px;
+	padding:30px;
 	list-style-type:none;
 	text-align: left;
 	border:#ccc double 5px;
@@ -338,4 +342,10 @@ a:hover{ font-style: italic; }
 	text-align: center;
 	color:#4444FF;
 	background:#DDD;
+}
+
+img{
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
 }

@@ -10,9 +10,10 @@
 	
 	<div id="nav_links">
 		<%= link_to "Home", '/home' %>
-		<%= link_to "Books", '/books' %>
+
 		<%= link_to "Users", '/users' %>
-		<%= link_to "About", '#' %>
+		<%= link_to "Books", '/books' %>
+		<%= link_to "About", '/about' %>
 		<% if user_signed_in? %>
 			<%= link_to "Sign Out", "/signout" %>
   	<% else %>
