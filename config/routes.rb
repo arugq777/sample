@@ -1,9 +1,11 @@
 Library::Application.routes.draw do
+	
+  devise_for :users
 
-  devise_for :users do
+  devise_scope :user do
  	  get "/signin" => "devise/sessions#new"
  	  get "/signup" => "devise/registrations#new"
- 	  get "/signout" => "devise/sessions#destroy", :method => :delete
+ 	  get "/signout" => "devise/sessions#destroy", :method => :destroy
   end
   
   resources :users do

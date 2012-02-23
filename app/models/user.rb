@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   has_many 	:favorites, 			:through =>	:favorited_books,
   														:source => :favorited
   
+  validates :password,	:length				=> { :maximum => 50 }
+  
 	validates :name,      :length       => { :maximum => 50 }
 
 	validates :username,  :presence     => true,

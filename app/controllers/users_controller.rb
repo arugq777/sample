@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
 	def index
     @title = "All Users"
-    @users = User.all
+		@users = User.all
   end
   
 	def show
