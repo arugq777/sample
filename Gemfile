@@ -16,7 +16,7 @@ gem 'haml-rails'
 gem 'sass-rails'
 #gem 'gravatar_image_tag'
 #gem 'will_paginate'
-#gem 'faker'
+gem 'faker'
 
 group :development do
   gem 'rspec-rails'
