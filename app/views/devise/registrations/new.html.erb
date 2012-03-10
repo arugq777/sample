@@ -3,12 +3,12 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= render "layouts/error_messages", :object => f.object %>
 
-	<div><%= f.label :username %><br />
-		<%= f.text_field :username, :placeholder => "(Account name. Must be unique.)" %>
-	</div>
+  <div><%= f.label :username %><br />
+    <%= f.text_field :username, :placeholder => "(Account name. Must be unique.)" %>
+  </div>
 
-	<div><%= f.label :name, "Your real name" %><br />
-		<%= f.text_field :name, :placeholder => "(This is optional.)" %></div>
+  <div><%= f.label :name, "Your real name" %><br />
+    <%= f.text_field :name, :placeholder => "(This is optional.)" %></div>
 
   <div><%= f.label :email %><br />
   <%= f.email_field :email, :placeholder => "(Not optional--we won't spam you, honest.)" %></div>

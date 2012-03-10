@@ -7,19 +7,19 @@ describe PagesController do
     @base_title = "Library"
   end
 
-	describe "GET 'home'" do
+  describe "GET 'home'" do
 
-		it "should be successful" do
-			get :home
-			debugger
-			response.should be_success
-		end
+    it "should be successful" do
+      get :home
+      debugger
+      response.should be_success
+    end
     
-		it "should have a 'Home' title" do
-			get :home
-			response.should have_selector( "title", :content => @base_title + " | Home" )
-		end
+    it "should have a 'Home' title" do
+      get :home
+      response.should have_selector( "title", :content => @base_title + " | Home" )
+    end
 
-	end
+  end
 
 end

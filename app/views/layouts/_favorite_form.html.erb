@@ -1,9 +1,9 @@
 
-	<div id=<%="favorite_form_" + book.id.to_s %>>
-		<% if book.fan?(current_user) %>
-			<%= render 'layouts/del_favorite', :book => book %>
-		<% else %>
-			<%= render 'layouts/add_favorite', :book => book %>
-		<% end %>
-	</div>
+  <div id=<%="favorite_form_" + book.id.to_s %>>
+    <% if book.fan?(current_user) %>
+      <%= render 'layouts/del_favorite', :book => book %>
+    <% else %>
+      <%= render 'layouts/add_favorite', :book => book %>
+    <% end %>
+  </div>
 

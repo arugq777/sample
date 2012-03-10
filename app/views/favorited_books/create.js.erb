@@ -1,18 +1,18 @@
 $("#favorite_form_"+"<%= @book.id.to_s %>").html(
-	"<%= escape_javascript( 
-		render 'layouts/del_favorite', :book => @book)%>")
+  "<%= escape_javascript( 
+    render 'layouts/del_favorite', :book => @book)%>")
 
 $("span.user_stat").html(
-	"<%= escape_javascript( 
-		render 'layouts/user_stat' ) %>")
+  "<%= escape_javascript( 
+    render 'layouts/user_stat' ) %>")
 
 $("span.book_stat"+"<%= @book.id.to_s %>").html(
-	"<%= escape_javascript( 
-		render 'layouts/book_stat' , :book => @book) %>")
+  "<%= escape_javascript( 
+    render 'layouts/book_stat' , :book => @book) %>")
 
 $("#book_fans").html(
-	"<%= escape_javascript( 
-		render 'books/book_fans', :book => @book ) %>")
+  "<%= escape_javascript( 
+    render 'books/book_fans', :book => @book ) %>")
 
 $("#footer_message").html(
-	'<span style="color:green">| Added! |</span>')
+  '<span style="color:green">| Added! |</span>')

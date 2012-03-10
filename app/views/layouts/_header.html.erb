@@ -1,24 +1,24 @@
 <div id="header">
 
-	<div id="app_title">
-		<% if user_signed_in? %>
-			<h1><%= link_to "Pseudobibliophilia", user_path(current_user) -%></h1>
-		<%else%>
-			<h1><%= link_to "Pseudobibliotheque", '/home'-%></h1>
-		<%end%>
-	</div>
-	
-	<div id="nav_links">
-		<%= link_to "Home", '/home' %>
+  <div id="app_title">
+    <% if user_signed_in? %>
+      <h1><%= link_to "Pseudobibliophilia", user_path(current_user) -%></h1>
+    <%else%>
+      <h1><%= link_to "Pseudobibliotheque", '/home'-%></h1>
+    <%end%>
+  </div>
+  
+  <div id="nav_links">
+    <%= link_to "Home", '/home' %>
 
-		<%= link_to "Users", '/users' %>
-		<%= link_to "Books", '/books' %>
-		<%= link_to "About", '/about' %>
-		<% if user_signed_in? %>
-			<%= link_to "Sign Out", "/signout" %>
-  	<% else %>
-  		<span><%= link_to "Sign In", "/signin" %></span>
-  		<span><%= link_to "Sign Up", "/signup" %></span> 
-  	<% end %>
-	</div>
+    <%= link_to "Users", '/users' %>
+    <%= link_to "Books", '/books' %>
+    <%= link_to "About", '/about' %>
+    <% if user_signed_in? %>
+      <%= link_to "Sign Out", "/signout" %>
+    <% else %>
+      <span><%= link_to "Sign In", "/signin" %></span>
+      <span><%= link_to "Sign Up", "/signup" %></span> 
+    <% end %>
+  </div>
 </div>

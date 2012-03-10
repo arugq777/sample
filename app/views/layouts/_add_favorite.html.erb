@@ -1,5 +1,5 @@
 <%= form_for current_user.favorited_books.build( :favorited_id => book.id ),
-		:remote => true do |f| %>
-	<div> <%= f.hidden_field :favorited_id %> </div>
-	<div class="actions"><%= f.submit "Add Favorite" %></div>
+    :remote => true do |f| %>
+  <div> <%= f.hidden_field :favorited_id %> </div>
+  <div class="actions"><%= f.submit "Add Favorite" %></div>
 <% end %>

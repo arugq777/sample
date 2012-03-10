@@ -1,27 +1,27 @@
 <div class = "book_profile">
-	<div class="sidebar">
-		<div class="stats">
-			<%= render 'layouts/favorite_form', :book =>@book if user_signed_in? %>
-			[&nbsp;<%= render 'layouts/book_stat', :book => @book -%>fans&nbsp;]
-		</div>
-		<ul id="book_fans">
-			<%= render 'books/book_fans'%>
-		</ul>
-	</div>
-	<div id="book_info">
-	<div id="title">
-		<h2><%= @book.title %></h2>
-	</div>
+  <div class="sidebar">
+    <div class="stats">
+      <%= render 'layouts/favorite_form', :book =>@book if user_signed_in? %>
+      [&nbsp;<%= render 'layouts/book_stat', :book => @book -%>fans&nbsp;]
+    </div>
+    <ul id="book_fans">
+      <%= render 'books/book_fans'%>
+    </ul>
+  </div>
+  <div id="book_info">
+  <div id="title">
+    <h2><%= @book.title %></h2>
+  </div>
 
-	<div id="author">	
-		by <%= @book.author%>
-	</div>
+  <div id="author">  
+    by <%= @book.author%>
+  </div>
 
-	<div id="summary">
-		<h3> ~ Summary ~</h3>
-		<p><%= @book.summary %></p>
-	</div>
-	</div>	
+  <div id="summary">
+    <h3> ~ Summary ~</h3>
+    <p><%= @book.summary %></p>
+  </div>
+  </div>  
 
 </div>
 

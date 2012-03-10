@@ -1,51 +1,51 @@
 <div id="user_profile">
-	<div id="user_favorites">
-		<h2>
-			<%= 
-				(@user.id == current_user.id) ?
-				"You have " : 
-				(@user.username + "'s")
-			%>
-			<% if (@user.id == current_user.id) %> 
-				<%=	(render 'layouts/user_stat') %> 
-			<% end %>
-			favorites.
-		</h2>
-		<%if @user == current_user %>
-			<h3><%= link_to "Find more", "/books" %>, or 
-				<%= link_to "see what everyone's reading!", "/users"%></h3>
-		<%end%>
-	
-		<div>
-		<strong>| Name: </strong> 
-			<%= @user.name %>
-		<strong> || URL: </strong> 
-			<%= link_to user_path(@user), @user %> 
-		<strong> || Favorites: </strong> 
-			 <%= 
-				(@user.id == current_user.id)	? 
-				(render 'layouts/user_stat')  : 
-				(@user.favorites.count) 
-			%> <strong>|</strong>
-		</div>
-		<table>
-			<% bool = true %>
-			<% @user.favorites.each do |book| %>
-	
-				<tr class="color_<%= bool %>">
-					<td class="title">
-						<%= link_to book.title, book_path(book)%>
-					</td>
-					<td class="stats" rowspan="2">
-						<%= render 'layouts/favorite_form', :book => book if user_signed_in?%>
-						[&nbsp;<%= render 'layouts/book_stat', :book => book %>fans&nbsp;]
-					</td>
-				</tr>
-				<tr class="color_<%= bool %>">
-					<td class="author">By <%= book.author %></td>
-				</tr>
-				<% bool = !bool %>
-			<%end%>
-		</table>
-	</div>
+  <div id="user_favorites">
+    <h2>
+      <%= 
+        (@user.id == current_user.id) ?
+        "You have " : 
+        (@user.username + "'s")
+      %>
+      <% if (@user.id == current_user.id) %> 
+        <%=  (render 'layouts/user_stat') %> 
+      <% end %>
+      favorites.
+    </h2>
+    <%if @user == current_user %>
+      <h3><%= link_to "Find more", "/books" %>, or 
+        <%= link_to "see what everyone's reading!", "/users"%></h3>
+    <%end%>
+  
+    <div>
+    <strong>| Name: </strong> 
+      <%= @user.name %>
+    <strong> || URL: </strong> 
+      <%= link_to user_path(@user), @user %> 
+    <strong> || Favorites: </strong> 
+       <%= 
+        (@user.id == current_user.id)  ? 
+        (render 'layouts/user_stat')  : 
+        (@user.favorites.count) 
+      %> <strong>|</strong>
+    </div>
+    <table>
+      <% bool = true %>
+      <% @user.favorites.each do |book| %>
+  
+        <tr class="color_<%= bool %>">
+          <td class="title">
+            <%= link_to book.title, book_path(book)%>
+          </td>
+          <td class="stats" rowspan="2">
+            <%= render 'layouts/favorite_form', :book => book if user_signed_in?%>
+            [&nbsp;<%= render 'layouts/book_stat', :book => book %>fans&nbsp;]
+          </td>
+        </tr>
+        <tr class="color_<%= bool %>">
+          <td class="author">By <%= book.author %></td>
+        </tr>
+        <% bool = !bool %>
+      <%end%>
+    </table>
+  </div>
 </div>
