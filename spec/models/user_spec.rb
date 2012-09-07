@@ -79,5 +79,4 @@ describe User do
       User.new( with_long_password ).should_not be_valid
     end
   end
-  
 end

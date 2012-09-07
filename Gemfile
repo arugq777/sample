@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -21,7 +21,7 @@ gem 'faker'
 group :development do
   gem 'rspec-rails'
   gem 'ruby-debug19'
-  gem 'ruby-debug-base19'  
+  gem 'ruby-debug-base19'
 end
 
 # Gems used only for assets and not required
@@ -32,16 +32,16 @@ group :assets do
 end
 
 group :test do
-	#gem 'factory_girl'
+	gem 'factory_girl'
 	gem 'factory_girl_rails'
   gem 'rspec'
   gem 'faker'
   gem 'webrat'
   gem 'turn', :require => false
   gem 'spork'
-  gem 'autotest', '4.4.4'
-  gem 'redgreen', '1.2.2'
-  gem 'test-unit', '2.1.1'
+  gem 'autotest'
+  gem 'redgreen'
+  gem 'test-unit'
 end
 
 # Use unicorn as the web server
@@ -52,4 +52,3 @@ end
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
-

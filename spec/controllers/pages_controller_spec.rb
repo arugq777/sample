@@ -4,14 +4,13 @@ describe PagesController do
   render_views
 
   before(:each) do
-    @base_title = "Library"
+    @base_title = "Pseudobibliotheque"
   end
 
   describe "GET 'home'" do
 
     it "should be successful" do
       get :home
-      debugger
       response.should be_success
     end
     
@@ -19,7 +18,5 @@ describe PagesController do
       get :home
       response.should have_selector( "title", :content => @base_title + " | Home" )
     end
-
   end
-
 end

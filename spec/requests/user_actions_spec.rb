@@ -3,10 +3,10 @@ require 'spec_helper'
 describe "User actions" do
 
   before(:each) do
-    @user  = Factory(:user)
-    @user2 = Factory(:user, :email => "ex2@example.com", :username=> "ux2")
-    @book  = Factory(:book)
-    @book2 = Factory(:book)
+    @user  = FactoryGirl.create(:user)
+    @user2 = FactoryGirl.create(:user, :email => "ex2@example.com", :username=> "ux2")
+    @book  = FactoryGirl.create(:book)
+    @book2 = FactoryGirl.create(:book)
     @user.favorited_books.create(:favorited_id => @book.id)
     @user2.favorited_books.create(:favorited_id => @book2.id)
   end
@@ -130,7 +130,5 @@ describe "User actions" do
         response.should have_selector("div#error_explanation")        
       end
     end
-  end
-    
+  end 
 end
-

@@ -3,8 +3,8 @@ require 'spec_helper'
 describe FavoritedBook do
 
   before(:each) do
-    @book     = Factory(:book)
-    @user     = Factory(:user)
+    @book     = FactoryGirl.create(:book)
+    @user     = FactoryGirl.create(:user)
     @favorite = @user.favorited_books.build( :favorited_id => @book.id )
   end
   

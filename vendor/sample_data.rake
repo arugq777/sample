@@ -11,20 +11,20 @@ namespace :db do
 end
 
 def make_users
-	admin = User.create!(	:name => "USERNAME!",
-												:email => "abc@example.com",
-												:password => "123456",
-												:password_confirmation => "123456" )
-	admin.toggle!(:admin)
+	admin = User.create!( :name => "USERNAME!",
+                          :email => "abc@example.com",
+                          :password => "123456",
+                          :password_confirmation => "123456" )
+	admin.toggle!( :admin )
 
 	99.times do |n|
-		name 			= Faker::Name.name
-		email 		= "example_#{n+1}@example.org"
-		password 	= "password"
-		User.create!(	:name => name,
-									:email => email,
-									:password => password,
-									:password_confirmation => password )
+		name     = Faker::Name.name
+		email    = "example_#{n+1}@example.org"
+		password = "password"
+		User.create!( :name => name,
+                      :email => email,
+                      :password => password,
+                      :password_confirmation => password )
 	end
 end
 
@@ -38,7 +38,7 @@ end
 
 def make_relationships
 	users = User.all
-	user = users.first
+	user  = users.first
 	following = users[ 1..50 ]
 	followers = users[ 3..40 ]
 	following.each { |followed| user.follow!(followed) }

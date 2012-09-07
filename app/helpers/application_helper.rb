@@ -4,7 +4,7 @@ module ApplicationHelper
     if user_signed_in?
       base_title = "Pseudobibliophilia"
     else
-      base_title = "Psuedobibliotheque"
+      base_title = "Pseudobibliotheque"
     end
 
     if @title.nil?

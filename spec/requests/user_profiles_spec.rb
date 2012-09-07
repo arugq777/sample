@@ -3,10 +3,10 @@ require 'spec_helper'
 describe "UserProfiles" do
   
   before(:each) do
-    @book1 = Factory(:book)
-    @book2 = Factory(:book, :title => "book2")
-    @user1 = Factory(:user)
-    @user2 = Factory(:user, :username => "user2",
+    @book1 = FactoryGirl.create(:book)
+    @book2 = FactoryGirl.create(:book, :title => "book2")
+    @user1 = FactoryGirl.create(:user)
+    @user2 = FactoryGirl.create(:user, :username => "user2",
                             :email     => "user2@example.com")
     @user1.favorited_books.create( :favorited_id => @book1.id )
     @user2.favorited_books.create( :favorited_id => @book2.id )

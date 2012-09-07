@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   factory :user do |u|
     u.username "mr_ex"
     u.name "Ed Xavier"
